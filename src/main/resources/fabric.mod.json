@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "always-saddled",
+	"version": "${version}",
+	"name": "Always Saddled",
+	"description": "Ride your disguised steed",
+	"authors": [
+		"Aniomis"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/aniomis/AlwaysSaddled"
+	},
+	"license": "GPLv3",
+	"icon": "assets/always-saddled/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "mcmod.aniomis.alwayssaddled.Alwayssaddled",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "mcmod.aniomis.alwayssaddled.AlwayssaddledClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"always-saddled.mixins.json",
+		{
+			"config": "always-saddled.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
